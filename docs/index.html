@@ -2,12 +2,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .height-transition {
+        transition: height 1.0s ease-in-out;
+        height: 0;
+        background-color: yellow;
+      }
+    </style>
   </head>
   <body>
     <ul>
       <li><button class="js-once">Call requestAnimationFrame(callback) once.</button></li>
       <li><button class="js-recursively">Call requestAnimationFrame(callback) recursively.</button></li>
+      <li><button class="js-start-height-transition-in-this-frame">Start height transition in this frame.</button></li>
     </ul>
+    <div>
+      <div class="height-transition">
+        <p>[height-transition: 1]</p>
+        <p>[height-transition: 2]</p>
+        <p>[height-transition: 3]</p>
+        <p>[height-transition: 4]</p>
+        <p>[height-transition: 5]</p>
+      </div>
+    </div>
     <script>
       window.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.js-once').addEventListener('click', () => {
@@ -27,6 +44,14 @@
           }
           window.requestAnimationFrame(step)
         });
+
+        document.querySelector('.js-start-height-transition-in-this-frame').addEventListener('click', () => {
+          window.requestAnimationFrame(() => {
+            const el = document.querySelector('.height-transition')
+            // なお、auto へ変更してもアニメーションしない。なぜかは未調査。
+            el.style.height = '300px'
+          })
+        })
       })
     </script>
   </body>
