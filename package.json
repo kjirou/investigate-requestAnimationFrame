@@ -1,7 +1,6 @@
 {
   "name": "investigate-requestanimationframe",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kjirou/investigate-requestAnimationFrame.git"
@@ -11,5 +10,8 @@
   "bugs": {
     "url": "https://github.com/kjirou/investigate-requestAnimationFrame/issues"
   },
-  "homepage": "https://github.com/kjirou/investigate-requestAnimationFrame#readme"
+  "homepage": "https://github.com/kjirou/investigate-requestAnimationFrame#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
 }
