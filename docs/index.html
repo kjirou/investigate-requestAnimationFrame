@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <ul>
+      <li><button class="js-once">Call requestAnimationFrame(callback) once.</button></li>
+      <li><button class="js-recursively">Call requestAnimationFrame(callback) recursively.</button></li>
+    </ul>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.js-once').addEventListener('click', () => {
+          // この timestamp は詳しくは以下だけど、だいたいは「画面表示完了後の時間」だと思って良さそう。
+          // https://developer.mozilla.org/ja/docs/Web/API/DOMHighResTimeStamp
+          window.requestAnimationFrame((timestamp) => {
+            console.log('Once:', timestamp)
+          })
+        })
+
+        document.querySelector('.js-recursively').addEventListener('click', () => {
+          // このイディオムは各所でよく見る。
+          // MDN https://developer.mozilla.org/ja/docs/Web/API/Window/requestAnimationFrame のサンプルコードにもある。
+          const step = (timestamp) => {
+            console.log('Recursively:', timestamp)
+            window.requestAnimationFrame(step)
+          }
+          window.requestAnimationFrame(step)
+        });
+      })
+    </script>
+  </body>
+</html>

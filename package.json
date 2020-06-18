@@ -1,6 +1,8 @@
 {
   "name": "investigate-requestanimationframe",
-  "scripts": {},
+  "scripts": {
+    "start": "$(npm bin)/http-server ./docs"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kjirou/investigate-requestAnimationFrame.git"
