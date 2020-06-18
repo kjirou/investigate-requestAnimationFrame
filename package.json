@@ -1,17 +1,13 @@
 {
   "name": "investigate-requestanimationframe",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kjirou/investigate-requestAnimationFrame.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "kjirou",
+  "license": "SEE LICENSE IN https://github.com/kjirou/investigate-requestAnimationFrame/blob/master/LICENSE",
   "bugs": {
     "url": "https://github.com/kjirou/investigate-requestAnimationFrame/issues"
   },
